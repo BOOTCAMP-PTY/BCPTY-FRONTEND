@@ -8,7 +8,7 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import { FaDiscord } from "react-icons/fa";
 import CodeIcon from '@mui/icons-material/Code';
 
-export default function Header() {
+export default function HeaderPage() {
 	return (
 		<Box sx={{ flexGrow: 1,width: 1,height: '100%', flexWrap: 'wrap'}}>
 			<AppBar position="static">
@@ -39,3 +39,4 @@ export default function Header() {
 		</Box>
 	);
 }
+

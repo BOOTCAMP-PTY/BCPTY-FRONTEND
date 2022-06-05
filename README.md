@@ -77,3 +77,7 @@ npm install react-hook-form
 npm install @mui/material @emotion/react @emotion/styled
 npm install react-redux redux
 npm install react-icons
+
+#Apuntes de guia para los themes
+https://mui.com/material-ui/customization/breakpoints/#default-breakpoints
+https://mui.com/system/properties/
