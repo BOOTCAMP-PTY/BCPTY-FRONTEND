@@ -6,12 +6,29 @@ import {
 	Button,
 	Typography,
 	IconButton,
-	Box,
+	CardContent,
 	Container,
+	InputAdornment,
+	Card,
 } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
+import PersonIcon from "@mui/icons-material/Person";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import HttpsIcon from "@mui/icons-material/Https";
 export default function Login() {
+	// Responsive
+
+	const botonSesion = {
+		width: 358,
+		height: 51,
+		borderRadius: 15,
+		"@media (max-width: 600px)": {
+			width: 245,
+			height: 35,
+			borderRadius: 15,
+		},
+	};
+
 	return (
 		<>
 			<HeaderPage />
@@ -21,98 +38,207 @@ export default function Login() {
 					justifyContent: "center",
 					alignSelf: "center",
 					display: "flex",
-					height: "80%",
+					height: "90%",
 				}}
 			>
-				<Box
-					style={{
+				<Card
+					sx={{
 						width: "100%",
 						justifyContent: "center",
+						alignSelf: "center",
 						display: "flex",
-						height: "90%",
-					}}
-					sx={{
-						maxWidth: 400,
-						borderRadius: 5,
+						Width: 624,
+						borderRadius: 15,
 						border: 1,
+						height: 797
 					}}
 				>
-					<Grid
-						container
-						direction="column"
-						justifyContent="center"
-						alignItems="center"
-						width="90%"
+					<CardContent
+						sx={{
+							width: "100%",
+							justifyContent: "center",
+							alignSelf: "center",
+							display: "flex",
+							Width: 495,
+							height: 722,
+						}}
 					>
-						<Grid style={{ marginBottom: "1em", width: "100%" }}>
-							<TextField fullWidth label="Correo" />
-						</Grid>
-						<Grid style={{ marginBottom: "1em", width: "100%" }}>
-							<TextField fullWidth label="Contraseña" />
-						</Grid>
-						<Grid
-							style={{
-								margin: "1em 0",
-								width: "100%",
-								display: "flex",
-								justifyContent: "center",
-							}}
-						>
-							<Button
-								variant="contained"
-								style={{
-									borderRadius: "20rem",
+						<Grid container>
+							{/* Titulo */}
+							<Grid
+								item
+								xs={12}
+								sx={{
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
 								}}
 							>
-								Iniciar Sesion
-							</Button>
-						</Grid>
-						<Grid>
-							<Typography
-								style={{ margin: "1em" }}
-								variant="subtitle1"
-								color="initial"
+								<Typography variant="h1" color="initial">
+									Iniciar Sesion
+								</Typography>
+							</Grid>
+
+							{/* Campos de formulario */}
+							<Grid container>
+								<Grid
+									item
+									xs={12}
+									sx={{
+										padding: 0,
+										margin: 0,
+									}}
+								>
+									<TextField
+										sx={{
+											width: "100%",
+											height: "auto",
+										}}
+										placeholder="Correo"
+										InputProps={{
+											style: {
+												borderRadius: 15,
+												height: 61,
+											},
+											startAdornment: (
+												<InputAdornment position="start">
+													<PersonIcon />
+												</InputAdornment>
+											),
+										}}
+									/>
+								</Grid>
+								<Grid item xs={12}>
+									<TextField
+										sx={{ width: "100%", height: "auto" }}
+										placeholder="Contaseña"
+										InputProps={{
+											style: {
+												borderRadius: 15,
+												height: 61,
+											},
+											startAdornment: (
+												<InputAdornment position="start">
+													<HttpsIcon />
+												</InputAdornment>
+											),
+										}}
+									/>
+								</Grid>
+							</Grid>
+
+							{/* Boton */}
+							<Grid
+								item
+								xs={12}
+								sx={{
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+								}}
 							>
-								O iniciar sesion con
-							</Typography>
-						</Grid>
-						<Grid
-							container
-							direction="row"
-							justifyContent="center"
-							columns={{ xs: 6, sm: 6 }}
-						>
-							<Grid xs={3} sm={3} align="center">
-								<IconButton
-									size="large"
-									edge="start"
-									color="inherit"
-									aria-label="menu"
+								<Button
+									variant="contained"
+									sx={botonSesion}
 								>
-									<GoogleIcon
-										style={{
-											fontSize: "3.5rem",
-										}}
-									/>
-								</IconButton>
+									Iniciar Sesion
+								</Button>
 							</Grid>
-							<Grid xs={3} sm={3} align="center">
-								<IconButton
-									size="large"
-									edge="start"
-									color="inherit"
-									aria-label="menu"
+
+							{/* Letras pequeñas */}
+							<Grid
+								container
+								sx={{
+									display: "flex",
+									justifyContent: "center",
+									alignItems: "center",
+									marginTop: 2,
+								}}
+							>
+								<Typography variant="subtitle1" color="initial">
+									O iniciar sesion con
+								</Typography>
+							</Grid>
+
+							{/* Iconos */}
+							<Grid container rowSpacing={1} justifyContent="space-evenly">
+								{/* Google */}
+								<Grid
+									sx={{
+										display: "flex",
+										flexDirection: "column",
+										width: 120,
+										justifyContent: "center",
+										alignItems: "center",
+									}}
 								>
-									<GitHubIcon
-										style={{
-											fontSize: "3.5rem",
-										}}
-									/>
-								</IconButton>
+									<Grid item xs={6}>
+										<IconButton
+											align
+											size="large"
+											edge="start"
+											color="inherit"
+											aria-label="menu"
+											sx={{
+												width: 80,
+												height: 80,
+											}}
+										>
+											<GoogleIcon
+												style={{
+													width: 66,
+													height: 66,
+												}}
+											/>
+										</IconButton>
+									</Grid>
+									<Grid item xs={6}>
+										<Typography variant="body2" color="initial">
+											Google
+										</Typography>
+									</Grid>
+								</Grid>
+
+								{/* GitHub */}
+								<Grid
+									sx={{
+										display: "flex",
+										flexDirection: "column",
+										width: 120,
+										justifyContent: "center",
+										alignItems: "center",
+									}}
+								>
+									<Grid item xs={6}>
+										<IconButton
+											align
+											size="large"
+											edge="start"
+											color="inherit"
+											aria-label="menu"
+											sx={{
+												width: 80,
+												height: 80,
+											}}
+										>
+											<GitHubIcon
+												style={{
+													width: 66,
+													height: 66,
+												}}
+											/>
+										</IconButton>
+									</Grid>
+									<Grid item xs={6}>
+										<Typography variant="body2" color="initial">
+											GitHub
+										</Typography>
+									</Grid>
+								</Grid>
 							</Grid>
 						</Grid>
-					</Grid>
-				</Box>
+					</CardContent>
+				</Card>
 			</Container>
 		</>
 	);

@@ -4,7 +4,7 @@ import CodeIcon from '@mui/icons-material/Code';
 
 export default function HeaderPage() {
 	return (
-		<Box sx={{ flexGrow: 1,width: 1,height: '20%', flexWrap: 'wrap'}}>
+		<Box sx={{ flexGrow: 1,width: 1,height: '10%', flexWrap: 'wrap'}}>
 			<AppBar position="static">
 				<Toolbar>
 					<CodeIcon sx={{ mr: 1 }} />

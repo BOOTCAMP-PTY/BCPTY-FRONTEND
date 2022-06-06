@@ -4,40 +4,16 @@ import {
 	Button,
 	Grid,
 	Container,
-	createTheme,
-	ThemeProvider,
 } from "@mui/material";
 import HeaderHome from "../../Components/Headers/HeaderHome";
 
 export default function Home() {
-	const theme = createTheme({});
 
-	theme.typography.h1 = {
-		"@media (min-width:600px)": {
-			fontSize: "2.4rem",
-			margin: "1rem",
-		},
-		[theme.breakpoints.up("md")]: {
-			fontSize: "3rem",
-			margin: "1.5rem",
-		},
-	};
-
-	theme.typography.body1 = {
-		"@media (max-width:600px)": {
-			fontSize: "1.5rem",
-			margin: "1rem",
-		},
-		[theme.breakpoints.up("md")]: {
-			fontSize: "1.2rem",
-			margin: "1.5rem",
-		},
-	};
 
 	// imagen
 	const image = require("../../Assets/Images/home.png");
 	return (
-		<ThemeProvider theme={theme}>
+		<>
 			<HeaderHome />
 			<Container
 				fluid
@@ -99,6 +75,6 @@ export default function Home() {
 					</Grid>
 				</Grid>
 			</Container>
-		</ThemeProvider>
+		</>
 	);
 }
