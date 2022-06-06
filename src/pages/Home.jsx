@@ -34,7 +34,7 @@ export default function Home() {
           }}
         >
           <Typography variant="h1" color="initial" align="left">
-            Aprender a Programar como un Pro
+            Aprende a Programar como un Pro
           </Typography>
           <Typography variant="body1" color="initial" align="justify">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore
