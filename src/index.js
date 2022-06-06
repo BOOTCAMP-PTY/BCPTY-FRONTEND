@@ -4,14 +4,11 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./Services/store";
-import ThemeProvider from "./theme";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <App />
   </Provider>
 );
 
