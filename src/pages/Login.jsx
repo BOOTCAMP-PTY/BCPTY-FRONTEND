@@ -35,7 +35,7 @@ export default function Login() {
 						}}
 					>
 						<CardContent>
-							<Grid container alignItems="center">
+							<Grid container>
 								{/* Titulo */}
 								<Grid
 									item
@@ -46,13 +46,21 @@ export default function Login() {
 										marginTop: { lg: "72px", xs: "59px", sm: "66px" },
 										marginBottom: { lg: "62px", xs: "39px", sm: "51px" },
 										display: "flex",
-										justifyContent : "center"
+										justifyContent: "center",
+										width: { lg: "217px", xs: "150px" },
+										height: { lg: "42px", xs: "24px" },
 									}}
 								>
-									<Typography variant="h4" color="initial" align="center" sx={{
-										width : {xs:"150px"},
-										height : {xs:"24px"}
-									}}>
+									<Typography
+										variant="h1"
+										color="initial"
+										align="center"
+										sx={{
+											fontSize: { lg: "36px", xs: "24px" },
+											fontWeight: { lg: "400px", xs: "400px" },
+											lineHeight: { lg: "42px", xs: "28.18px" },
+										}}
+									>
 										Iniciar Sesion
 									</Typography>
 								</Grid>
@@ -73,14 +81,21 @@ export default function Login() {
 											width: { lg: "470px", xs: "245px" },
 										}}
 										fullWidth
-										placeholder="Correo"
+										placeholder="Correo electronico"
 										InputProps={{
 											sx: {
 												height: { lg: "61px", xs: "34px" },
 											},
 											startAdornment: (
 												<InputAdornment position="start">
-													<PersonIcon />
+													<PersonIcon
+														sx={{
+															width: { lg: "38px", xs: "18px" },
+															height: { lg: "38px", xs: "18px" },
+															marginLeft: { lg: "28px", xs: "15px" },
+															marginRight: { lg: "14px", xs: "9px" },
+														}}
+													/>
 												</InputAdornment>
 											),
 										}}
@@ -100,14 +115,21 @@ export default function Login() {
 											width: { lg: "470px", xs: "245px" },
 										}}
 										fullWidth
-										placeholder="Contaseña"
+										placeholder="Contraseña"
 										InputProps={{
 											sx: {
 												height: { lg: "61px", xs: "34px" },
 											},
 											startAdornment: (
 												<InputAdornment position="start">
-													<HttpsIcon />
+													<HttpsIcon
+														sx={{
+															width: { lg: "38px", xs: "18px" },
+															height: { lg: "38px", xs: "18px" },
+															marginLeft: { lg: "28px", xs: "15px" },
+															marginRight: { lg: "14px", xs: "9px" },
+														}}
+													/>
 												</InputAdornment>
 											),
 										}}
@@ -133,9 +155,27 @@ export default function Login() {
 											height: { lg: "51px", xs: "35px" },
 										}}
 									>
-										<Typography variant="h4" color="initial" align="center">
-											Iniciar Sesion
-										</Typography>
+										<Grid
+											item
+											xs={12}
+											sx={{
+												width: { lg: "154px", xs: "100px" },
+												height: { lg: "28px", xs: "19px" },
+											}}
+										>
+											<Typography
+												variant="h4"
+												color="initial"
+												align="center"
+												sx={{
+													fontSize: { lg: "24px", xs: "16px" },
+													fontWeight: { lg: "600px", xs: "600px" },
+													lineHeight: { lg: "28.18px", xs: "18.78px" },
+												}}
+											>
+												Iniciar Sesion
+											</Typography>
+										</Grid>
 									</Button>
 								</Grid>
 
@@ -148,12 +188,19 @@ export default function Login() {
 										justifyContent: "center",
 										alignItems: "center",
 										marginBottom: { lg: "38px", xs: "31px" },
+										width: { lg: "137px", xs: "119px" },
+										height: { lg: "22px", xs: "13px" },
 									}}
 								>
 									<Typography
 										variant="subtitle1"
 										color="initial"
 										align="center"
+										sx={{
+											fontSize: { lg: "16px", xs: "14px" },
+											fontWeight: { lg: "400px", xs: "400px" },
+											lineHeight: { lg: "18.78px", xs: "16.44px" },
+										}}
 									>
 										O iniciar sesion con
 									</Typography>
@@ -187,7 +234,7 @@ export default function Login() {
 											sx={{
 												width: { lg: "66px", xs: "42px" },
 												height: { lg: "66px", xs: "44px" },
-												margin : 0
+												margin: 0,
 											}}
 										>
 											<GoogleIcon
@@ -195,7 +242,7 @@ export default function Login() {
 													width: { lg: "66px", xs: "42px" },
 													height: { lg: "66px", xs: "44px" },
 													display: "flex",
-													alignItems : "center"
+													alignItems: "center",
 												}}
 											/>
 										</IconButton>
@@ -218,7 +265,7 @@ export default function Login() {
 											sx={{
 												width: { lg: "66px", xs: "42px" },
 												height: { lg: "66px", xs: "44px" },
-												margin : 0
+												margin: 0,
 											}}
 										>
 											<GitHubIcon
