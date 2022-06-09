@@ -4,6 +4,7 @@ import HeaderHome from "../components/headers/HeaderHome";
 import Image from "../components/Image";
 
 import homeBanner from "../assets/images/svg/landing_banner.svg";
+import { Link } from "react-router-dom";
 
 export default function Home() {
 
@@ -48,12 +49,12 @@ export default function Home() {
             columns={{ xs: 12, sm: 12 }}
           >
             <Grid item sm={6} xs={12} align="center">
-              <Button variant="contained" href="/login">
+              <Button variant="contained" component={Link} to="/login">
                 Iniciar Sesion
               </Button>
             </Grid>
             <Grid item sm={6} xs={12} align="center">
-              <Button variant="contained" href="/login">
+              <Button variant="contained" component={Link} to="/register">
                 Registrarse
               </Button>
             </Grid>

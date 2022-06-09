@@ -15,7 +15,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import PersonIcon from "@mui/icons-material/Person";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import HttpsIcon from "@mui/icons-material/Https";
-export default function Login() {
+export default function Register() {
 	return (
 		<>
 			<Container
@@ -31,7 +31,7 @@ export default function Login() {
 					<Card
 						sx={{
 							width: { lg: "624px", xs: "325px", sm: "524px" },
-							height: { lg: "797px", xs: "500px", sm: "697px" },
+							height: { lg: "873px", xs: "570px", sm: "697px" },
 						}}
 					>
 						<CardContent>
@@ -43,11 +43,11 @@ export default function Login() {
 									md={12}
 									sx={{
 										padding: 0,
-										marginTop: { lg: "72px", xs: "59px", sm: "66px" },
-										marginBottom: { lg: "62px", xs: "39px", sm: "58px" },
+										marginTop: { lg: "58px", xs: "59px", sm: "66px" },
+										marginBottom: { lg: "45px", xs: "39px", sm: "51px" },
 										display: "flex",
 										justifyContent: "center",
-										width: { lg: "217px", xs: "150px" },
+										width: { lg: "169px", xs: "150px" },
 										height: { lg: "42px", xs: "24px" },
 									}}
 								>
@@ -57,11 +57,11 @@ export default function Login() {
 										align="center"
 										sx={{
 											fontSize: { lg: "36px", xs: "24px", sm: "30px" },
-											fontWeight: { lg: "400px" },
-											lineHeight: { lg: "42px", xs: "28.18px", sm:"36px" },
+											fontWeight: { lg: "400px"},
+											lineHeight: { lg: "42px", xs: "28.18px", sm: "36px" },
 										}}
 									>
-										Iniciar Sesion
+										Registrate
 									</Typography>
 								</Grid>
 
@@ -78,22 +78,58 @@ export default function Login() {
 								>
 									<TextField
 										sx={{
-											width: { lg: "470px", xs: "245px", sm : "440px" },
+											width: { lg: "470px", xs: "245px", sm: "400px" },
 										}}
 										fullWidth
 										placeholder="Correo electronico"
 										InputProps={{
 											sx: {
-												height: { lg: "61px", xs: "34px", sm:"52px" },
+												height: { lg: "61px", xs: "34px", sm : "48px" },
 											},
 											startAdornment: (
 												<InputAdornment position="start">
 													<PersonIcon
 														sx={{
-															width: { lg: "38px", xs: "18px", sm : "28px" },
-															height: { lg: "38px", xs: "18px", sm : "28px" },
-															marginLeft: { lg: "28px", xs: "15px", sm : "20px" },
-															marginRight: { lg: "14px", xs: "9px", sm : "12px" },
+															width: { lg: "38px", xs: "18px", sm: "28px" },
+															height: { lg: "38px", xs: "18px",sm: "28px" },
+															marginLeft: { lg: "28px", xs: "15px", sm: "20px" },
+															marginRight: { lg: "14px", xs: "9px", sm: "12px"},
+														}}
+													/>
+												</InputAdornment>
+											),
+										}}
+									/>
+								</Grid>
+								<Grid
+									item
+									xs={12}
+									sx={{
+										display: "flex",
+										justifyContent: "center",
+										alignItems: "center",
+                    marginBottom: { lg: "62px", xs: "34px", sm:"48px" },
+									}}
+								>
+									<TextField
+										sx={{
+											width: { lg: "470px", xs: "245px", sm:"400px" },
+
+										}}
+										fullWidth
+										placeholder="Contraseña"
+										InputProps={{
+											sx: {
+												height: { lg: "61px", xs: "34px", sm : "48px" },
+											},
+											startAdornment: (
+												<InputAdornment position="start">
+													<HttpsIcon
+														sx={{
+															width: { lg: "38px", xs: "18px", sm:"28px" },
+															height: { lg: "38px", xs: "18px", sm:"28px" },
+															marginLeft: { lg: "28px", xs: "15px", sm: "20px" },
+															marginRight: { lg: "14px", xs: "9px", sm: "12px" },
 														}}
 													/>
 												</InputAdornment>
@@ -112,22 +148,22 @@ export default function Login() {
 								>
 									<TextField
 										sx={{
-											width: { lg: "470px", xs: "245px", sm : "440px" },
+											width: { lg: "470px", xs: "245px", sm:"400px" },
 										}}
 										fullWidth
-										placeholder="Contraseña"
+										placeholder="Repetir contraseña"
 										InputProps={{
 											sx: {
-												height: { lg: "61px", xs: "34px", sm : "52px" },
+												height: { lg: "61px", xs: "34px", sm:"48px" },
 											},
 											startAdornment: (
 												<InputAdornment position="start">
 													<HttpsIcon
 														sx={{
-															width: { lg: "38px", xs: "18px", sm : "28px" },
-															height: { lg: "38px", xs: "18px", sm : "28px"},
-															marginLeft: { lg: "28px", xs: "15px", sm :"20px" },
-															marginRight: { lg: "14px", xs: "9px", sm : "12px"},
+															width: { lg: "38px", xs: "18px", sm :"28px" },
+															height: { lg: "38px", xs: "18px", sm :"28px" },
+															marginLeft: { lg: "28px", xs: "15px",sm :"20px" },
+															marginRight: { lg: "14px", xs: "9px", sm :"12px" },
 														}}
 													/>
 												</InputAdornment>
@@ -135,7 +171,6 @@ export default function Login() {
 										}}
 									/>
 								</Grid>
-
 								{/* Boton */}
 								<Grid
 									item
@@ -144,23 +179,23 @@ export default function Login() {
 										display: "flex",
 										justifyContent: "center",
 										alignItems: "center",
-										marginTop: { lg: "105px", xs: "55px", sm: "80px" },
-										marginBottom: { lg: "70px", xs: "31px", sm :"52px" },
+										marginTop: { lg: "85px", xs: "55px", sm: "65px" },
+										marginBottom: { lg: "70px", xs: "31px", sm: "46px" },
 									}}
 								>
 									<Button
 										variant="contained"
 										sx={{
-											width: { lg: "358px", xs: "245px", sm : "320px" },
-											height: { lg: "51px", xs: "35px", sm : "44px" },
+											width: { lg: "358px", xs: "245px", sm:"300px" },
+											height: { lg: "51px", xs: "35px", sm : "40px" },
 										}}
 									>
 										<Grid
 											item
 											xs={12}
 											sx={{
-												width: { lg: "154px", xs: "100px", sm : "140px" },
-												height: { lg: "28px", xs: "19px", sm : "25px" },
+												width: { lg: "154px", xs: "100px", sm:"125px" },
+												height: { lg: "28px", xs: "19px", sm: "23px" },
 											}}
 										>
 											<Typography
@@ -168,12 +203,12 @@ export default function Login() {
 												color="initial"
 												align="center"
 												sx={{
-													fontSize: { lg: "24px", xs: "16px", sm : "22px" },
+													fontSize: { lg: "24px", xs: "16px", sm: "20px" },
 													fontWeight: { lg: "600px" },
-													lineHeight: { lg: "28.18px", xs: "18.78px", sm : "25px" },
+													lineHeight: { lg: "28.18px", xs: "18.78px", sm: "23.34px" },
 												}}
 											>
-												Iniciar Sesion
+												Registrarse
 											</Typography>
 										</Grid>
 									</Button>
@@ -232,15 +267,15 @@ export default function Login() {
 											color="inherit"
 											aria-label="menu"
 											sx={{
-												width: { lg: "66px", xs: "42px", sm: "60px"  },
-												height: { lg: "66px", xs: "44px", sm: "60px" },
+												width: { lg: "66px", xs: "42px", sm: "54px"  },
+												height: { lg: "66px", xs: "44px", sm: "55px" },
 												margin: 0,
 											}}
 										>
 											<GoogleIcon
 												sx={{
-													width: { lg: "66px", xs: "42px", sm: "60px" },
-													height: { lg: "66px", xs: "44px", sm: "60px" },
+													width: { lg: "66px", xs: "42px", sm: "54px" },
+													height: { lg: "66px", xs: "44px", sm: "55px" },
 													display: "flex",
 													alignItems: "center",
 												}}
@@ -263,15 +298,15 @@ export default function Login() {
 											color="inherit"
 											aria-label="menu"
 											sx={{
-												width: { lg: "66px", xs: "42px", sm : "60px" },
-												height: { lg: "66px", xs: "44px", sm : "60px" },
+												width: { lg: "66px", xs: "42px", sm : "54px" },
+												height: { lg: "66px", xs: "44px", sm : "55px" },
 												margin: 0,
 											}}
 										>
 											<GitHubIcon
 												sx={{
-													width: { lg: "66px", xs: "42px", sm:"60px" },
-													height: { lg: "66px", xs: "44px", sm: "60px" },
+													width: { lg: "66px", xs: "42px", sm:"54px" },
+													height: { lg: "66px", xs: "44px", sm: "55px" },
 												}}
 											/>
 										</IconButton>
