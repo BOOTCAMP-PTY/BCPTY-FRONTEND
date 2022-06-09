@@ -169,6 +169,7 @@ export default function Register() {
 											}}
 											fullWidth
 											placeholder="Contraseña"
+											type="password"
 											{...register("password1", {
 												required: true,
 												minLength: 8,
@@ -229,6 +230,7 @@ export default function Register() {
 												width: { lg: "470px", xs: "245px", sm: "400px" },
 											}}
 											fullWidth
+											type="password"
 											placeholder="Repetir contraseña"
 											{...register("password2", {
 												required: true,

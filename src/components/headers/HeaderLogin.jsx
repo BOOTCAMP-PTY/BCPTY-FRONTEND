@@ -6,14 +6,10 @@ import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
 import CodeIcon from "@mui/icons-material/Code";
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import Switch from "@mui/material/Switch";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 
 export default function HeaderLogin() {
-	const [auth, setAuth] = React.useState(true);
 	const [anchorEl, setAnchorEl] = React.useState(null);
 
 	const handleMenu = (event) => {
@@ -32,7 +28,6 @@ export default function HeaderLogin() {
 					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 						Logo and Brand
 					</Typography>
-					{auth && (
 						<div>
 							<IconButton
 								size="large"
@@ -64,7 +59,6 @@ export default function HeaderLogin() {
 								<MenuItem onClick={handleClose}>Logout</MenuItem>
 							</Menu>
 						</div>
-					)}
 				</Toolbar>
 			</AppBar>
 		</Box>

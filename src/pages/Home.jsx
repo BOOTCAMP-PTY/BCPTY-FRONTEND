@@ -2,7 +2,6 @@ import React from "react";
 import { Typography, Button, Grid, Container } from "@mui/material";
 import HeaderHome from "../components/headers/HeaderHome";
 import Image from "../components/img/Image";
-
 import homeBanner from "../assets/images/svg/landing_banner.svg";
 import { Link } from "react-router-dom";
 
@@ -82,7 +81,7 @@ export default function Home() {
 							<Button variant="contained" component={Link} sx={{
                 width : "194px",
                 height : "51px"
-              }} to="/login">
+              }} to="/register">
                 <Typography variant="button" color="initial" align="center" sx={{
                 width : "112px",
                 height : "21px",
