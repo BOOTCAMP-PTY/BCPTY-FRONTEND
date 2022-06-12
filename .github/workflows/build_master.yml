@@ -27,10 +27,12 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
           scope: '@jmjhox'
+      - name: removing npm.lock
+        run: rm package-lock.json
       - name: Install dependencies
         run: yarn install
       - name: Build
-        run: npm run build
+        run: yarn run build
       - uses: akhileshns/heroku-deploy@v3.12.12 
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
