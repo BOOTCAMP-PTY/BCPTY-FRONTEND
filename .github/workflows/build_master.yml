@@ -28,11 +28,11 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: '@jmjhox'
       - name: Install dependencies
-        run: npm install
+        run: yarn install
       - name: Build
         run: npm run build
       - name: Test
-        run: npm run test:cov
+        run: npm run test
       - name: Archive code coverage result
         if: success()
         uses: actions/upload-artifact@v1
@@ -51,12 +51,12 @@ jobs:
       SNYK_TOKEN: ${{secrets.SNYK_TOKEN}}
     steps:
       - uses: actions/checkout@master
-      - name: Use Node 14.x
+      - name: Use Node 16.x
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: '16.x'
       - name: Install dependencies
-        run: npm i
+        run: yarn install
       - name: Run Snyk to check for vulnerabilities
         uses: snyk/actions/node@master
  
