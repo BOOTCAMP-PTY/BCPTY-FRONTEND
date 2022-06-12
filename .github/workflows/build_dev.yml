@@ -25,8 +25,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '16.x'
-      - name: Install dependencies
-        run: npm i
       - name: install packages with yarn
         run: yarn install
       - name: Build
@@ -42,8 +40,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
-      - name: Install dependencies
-        run: npm i
       - name: install packages with yarn
         run: yarn install
       - name: Run Snyk to check for vulnerabilities
