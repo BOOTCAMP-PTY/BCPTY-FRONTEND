@@ -27,22 +27,16 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
           scope: '@jmjhox'
+      - name: removing npm.lock
+        run: rm package-lock.json
       - name: Install dependencies
         run: yarn install
       - name: Build
-        run: npm run build
-      - name: Test
-        run: npm run test
-      - name: Archive code coverage result
-        if: success()
-        uses: actions/upload-artifact@v1
-        with:
-          name: deploy_coverage
-          path: coverage
+        run: yarn run build
       - uses: akhileshns/heroku-deploy@v3.12.12 
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_BACKEND}}
+          heroku_app_name: ${{secrets.HEROKU_APP_FRONTEND}}
           heroku_email: ${{secrets.HEROKU_API_EMAIL}}
         
   security:
