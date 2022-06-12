@@ -31,14 +31,6 @@ jobs:
         run: yarn install
       - name: Build
         run: npm run build
-      - name: Test
-        run: npm run test
-      - name: Archive code coverage result
-        if: success()
-        uses: actions/upload-artifact@v1
-        with:
-          name: deploy_coverage
-          path: coverage
       - uses: akhileshns/heroku-deploy@v3.12.12 
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
