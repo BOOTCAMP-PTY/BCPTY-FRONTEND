@@ -1,6 +1,5 @@
 import React from "react";
 import HeaderPage from "../components/headers/HeaderPage";
-import { useForm } from "react-hook-form";
 import {
 	TextField,
 	Grid,
@@ -17,14 +16,29 @@ import GoogleIcon from "@mui/icons-material/Google";
 import PersonIcon from "@mui/icons-material/Person";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import HttpsIcon from "@mui/icons-material/Https";
-
-export default function Login() {
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+export default function Register() {
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors },
 	} = useForm();
-	const onSubmit = (data) => console.log(data);
+	const onSubmit = (data) => {
+		console.log(data);
+		if (data.password1 == data.password2) {
+			Swal.fire("Good job!", "Tus datos se han enviado!", "success");
+			reset();
+		} else {
+			Swal.fire({
+				icon: "error",
+				title: "Oops...",
+				text: "Las contraseñas no coinciden!",
+			});
+		}
+	};
+
 	return (
 		<>
 			<Container
@@ -41,7 +55,7 @@ export default function Login() {
 						<Card
 							sx={{
 								width: { lg: "624px", xs: "325px", sm: "524px" },
-								height: { lg: "797px", xs: "500px", sm: "697px" },
+								height: { lg: "873px", xs: "570px", sm: "697px" },
 							}}
 						>
 							<CardContent>
@@ -53,11 +67,11 @@ export default function Login() {
 										md={12}
 										sx={{
 											padding: 0,
-											marginTop: { lg: "72px", xs: "59px", sm: "66px" },
-											marginBottom: { lg: "62px", xs: "39px", sm: "58px" },
+											marginTop: { lg: "58px", xs: "59px", sm: "66px" },
+											marginBottom: { lg: "45px", xs: "39px", sm: "51px" },
 											display: "flex",
 											justifyContent: "center",
-											width: { lg: "217px", xs: "150px" },
+											width: { lg: "169px", xs: "150px" },
 											height: { lg: "42px", xs: "24px" },
 										}}
 									>
@@ -71,7 +85,7 @@ export default function Login() {
 												lineHeight: { lg: "42px", xs: "28.18px", sm: "36px" },
 											}}
 										>
-											Iniciar Sesion
+											Registrate
 										</Typography>
 									</Grid>
 
@@ -81,18 +95,16 @@ export default function Login() {
 										xs={12}
 										sx={{
 											display: "flex",
-											flexDirection: "column",
 											justifyContent: "center",
 											alignItems: "center",
-											marginBottom: { lg: "64px", xs: "34px", sm: "48px" },
+											marginBottom: { lg: "62px", xs: "34px", sm: "48px" },
 										}}
 									>
 										<TextField
 											sx={{
-												width: { lg: "470px", xs: "245px", sm: "440px" },
+												width: { lg: "470px", xs: "245px", sm: "400px" },
 											}}
 											fullWidth
-											required
 											placeholder="Correo electronico"
 											{...register("email", {
 												required: true,
@@ -101,7 +113,7 @@ export default function Login() {
 											})}
 											InputProps={{
 												sx: {
-													height: { lg: "61px", xs: "34px", sm: "52px" },
+													height: { lg: "61px", xs: "34px", sm: "48px" },
 												},
 												startAdornment: (
 													<InputAdornment position="start">
@@ -134,7 +146,7 @@ export default function Login() {
 													display: "flex",
 													justifyContent: "center",
 													position: "absolute",
-													marginTop: "6.3rem"
+													marginTop: "6.3rem",
 												}}
 											>
 												Escriba bien su correo
@@ -148,19 +160,23 @@ export default function Login() {
 											display: "flex",
 											justifyContent: "center",
 											alignItems: "center",
+											marginBottom: { lg: "62px", xs: "34px", sm: "48px" },
 										}}
 									>
 										<TextField
 											sx={{
-												width: { lg: "470px", xs: "245px", sm: "440px" },
+												width: { lg: "470px", xs: "245px", sm: "400px" },
 											}}
 											fullWidth
-											type="password"
 											placeholder="Contraseña"
-											{...register("password", {required: true, minLength : 8})}
+											type="password"
+											{...register("password1", {
+												required: true,
+												minLength: 8,
+											})}
 											InputProps={{
 												sx: {
-													height: { lg: "61px", xs: "34px", sm: "52px" },
+													height: { lg: "61px", xs: "34px", sm: "48px" },
 												},
 												startAdornment: (
 													<InputAdornment position="start">
@@ -184,7 +200,7 @@ export default function Login() {
 												),
 											}}
 										/>
-										{errors.password && (
+										{errors.password1 && (
 											<Alert
 												severity="error"
 												sx={{
@@ -193,14 +209,75 @@ export default function Login() {
 													display: "flex",
 													justifyContent: "center",
 													position: "absolute",
-													marginTop: "6.3rem"
+													marginTop: "6.3rem",
 												}}
 											>
 												Escriba al menos 8 digitos
 											</Alert>
 										)}
 									</Grid>
-
+									<Grid
+										item
+										xs={12}
+										sx={{
+											display: "flex",
+											justifyContent: "center",
+											alignItems: "center",
+										}}
+									>
+										<TextField
+											sx={{
+												width: { lg: "470px", xs: "245px", sm: "400px" },
+											}}
+											fullWidth
+											type="password"
+											placeholder="Repetir contraseña"
+											{...register("password2", {
+												required: true,
+												minLength: 8,
+											})}
+											InputProps={{
+												sx: {
+													height: { lg: "61px", xs: "34px", sm: "48px" },
+												},
+												startAdornment: (
+													<InputAdornment position="start">
+														<HttpsIcon
+															sx={{
+																width: { lg: "38px", xs: "18px", sm: "28px" },
+																height: { lg: "38px", xs: "18px", sm: "28px" },
+																marginLeft: {
+																	lg: "28px",
+																	xs: "15px",
+																	sm: "20px",
+																},
+																marginRight: {
+																	lg: "14px",
+																	xs: "9px",
+																	sm: "12px",
+																},
+															}}
+														/>
+													</InputAdornment>
+												),
+											}}
+										/>
+										{errors.password2 && (
+											<Alert
+												severity="error"
+												sx={{
+													padding: 0,
+													width: "25%",
+													display: "flex",
+													justifyContent: "center",
+													position: "absolute",
+													marginTop: "6.3rem",
+												}}
+											>
+												Escriba al menos 8 digitos
+											</Alert>
+										)}
+									</Grid>
 									{/* Boton */}
 									<Grid
 										item
@@ -209,24 +286,24 @@ export default function Login() {
 											display: "flex",
 											justifyContent: "center",
 											alignItems: "center",
-											marginTop: { lg: "105px", xs: "55px", sm: "80px" },
-											marginBottom: { lg: "70px", xs: "31px", sm: "52px" },
+											marginTop: { lg: "85px", xs: "55px", sm: "65px" },
+											marginBottom: { lg: "70px", xs: "31px", sm: "46px" },
 										}}
 									>
 										<Button
 											variant="contained"
 											type="submit"
 											sx={{
-												width: { lg: "358px", xs: "245px", sm: "320px" },
-												height: { lg: "51px", xs: "35px", sm: "44px" },
+												width: { lg: "358px", xs: "245px", sm: "300px" },
+												height: { lg: "51px", xs: "35px", sm: "40px" },
 											}}
 										>
 											<Grid
 												item
 												xs={12}
 												sx={{
-													width: { lg: "154px", xs: "100px", sm: "140px" },
-													height: { lg: "28px", xs: "19px", sm: "25px" },
+													width: { lg: "154px", xs: "100px", sm: "125px" },
+													height: { lg: "28px", xs: "19px", sm: "23px" },
 												}}
 											>
 												<Typography
@@ -234,16 +311,16 @@ export default function Login() {
 													color="initial"
 													align="center"
 													sx={{
-														fontSize: { lg: "24px", xs: "16px", sm: "22px" },
+														fontSize: { lg: "24px", xs: "16px", sm: "20px" },
 														fontWeight: { lg: "600px" },
 														lineHeight: {
 															lg: "28.18px",
 															xs: "18.78px",
-															sm: "25px",
+															sm: "23.34px",
 														},
 													}}
 												>
-													Iniciar Sesion
+													Registrarse
 												</Typography>
 											</Grid>
 										</Button>
@@ -306,15 +383,15 @@ export default function Login() {
 												color="inherit"
 												aria-label="menu"
 												sx={{
-													width: { lg: "66px", xs: "42px", sm: "60px" },
-													height: { lg: "66px", xs: "44px", sm: "60px" },
+													width: { lg: "66px", xs: "42px", sm: "54px" },
+													height: { lg: "66px", xs: "44px", sm: "55px" },
 													margin: 0,
 												}}
 											>
 												<GoogleIcon
 													sx={{
-														width: { lg: "66px", xs: "42px", sm: "60px" },
-														height: { lg: "66px", xs: "44px", sm: "60px" },
+														width: { lg: "66px", xs: "42px", sm: "54px" },
+														height: { lg: "66px", xs: "44px", sm: "55px" },
 														display: "flex",
 														alignItems: "center",
 													}}
@@ -337,15 +414,15 @@ export default function Login() {
 												color="inherit"
 												aria-label="menu"
 												sx={{
-													width: { lg: "66px", xs: "42px", sm: "60px" },
-													height: { lg: "66px", xs: "44px", sm: "60px" },
+													width: { lg: "66px", xs: "42px", sm: "54px" },
+													height: { lg: "66px", xs: "44px", sm: "55px" },
 													margin: 0,
 												}}
 											>
 												<GitHubIcon
 													sx={{
-														width: { lg: "66px", xs: "42px", sm: "60px" },
-														height: { lg: "66px", xs: "44px", sm: "60px" },
+														width: { lg: "66px", xs: "42px", sm: "54px" },
+														height: { lg: "66px", xs: "44px", sm: "55px" },
 													}}
 												/>
 											</IconButton>
