@@ -9,11 +9,11 @@ const Image = ({ source, sx, alt, height, width }) => {
 };
 
 Image.propTypes = {
-  source: PropTypes.node,
-  sx: PropTypes.node,
-  alt: PropTypes.node,
-  height: PropTypes.node,
-  width: PropTypes.node
+  source: PropTypes.string,
+  sx: PropTypes.object,
+  alt: PropTypes.string,
+  height: PropTypes.string | PropTypes.number,
+  width: PropTypes.string | PropTypes.number
 };
 
 export default Image;
