@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Button, Grid, Container } from '@mui/material';
 import HeaderHome from '../components/headers/HeaderHome';
-import Image from '../components/img/Image';
+import Image from '../components/Image';
 import homeBanner from '../assets/images/svg/landing_banner.svg';
 import { Link } from 'react-router-dom';
 
