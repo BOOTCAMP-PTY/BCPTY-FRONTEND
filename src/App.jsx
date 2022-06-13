@@ -1,7 +1,7 @@
-import React from "react";
-import Router from "./routes/router";
+import React from 'react';
+import Router from './routes/router';
 
-import ThemeProvider from "./theme";
+import ThemeProvider from './theme';
 
 export default function App() {
   return (
