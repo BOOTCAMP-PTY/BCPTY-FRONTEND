@@ -12,6 +12,10 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "@types/jest": "^28.1.1",
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.13",
+    "@types/react-dom": "^18.0.5",
     "bootstrap": "^5.2.0-beta1",
     "prop-types": "^15.8.1",
     "react": "^18.1.0",
@@ -23,6 +27,7 @@
     "react-scripts": "5.0.1",
     "redux": "^4.2.0",
     "sweetalert2": "^11.4.17",
+    "typescript": "^4.7.3",
     "web-vitals": "^2.1.0",
     "yup": "^0.32.11"
   },
@@ -31,9 +36,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix",
-    "format": "prettier --write ./**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
@@ -60,12 +65,15 @@
     ]
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.28.0",
+    "@typescript-eslint/parser": "^5.28.0",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.1",
-    "prettier": "^2.6.2"
+    "prettier": "^2.7.1"
   }
 }
