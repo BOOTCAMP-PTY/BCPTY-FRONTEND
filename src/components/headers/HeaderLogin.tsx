@@ -10,16 +10,23 @@ import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
 
 export default function HeaderLogin() {
-  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(false);
+  const anchorRef = React.useRef<HTMLButtonElement>(null);
 
-  const handleMenu = (event) => {
-    setAnchorEl(event.currentTarget);
+  const handleToggle = () => {
+    setAnchorEl((prevOpen) => !prevOpen);
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
+  const handleClose = (event: Event | React.SyntheticEvent) => {
+    if (
+      anchorRef.current &&
+      anchorRef.current.contains(event.target as HTMLElement)
+    ) {
+      return;
+    }
 
+    setAnchorEl(false);
+  };
   return (
     <Box sx={{ flexGrow: 1, width: 1, height: '10%', flexWrap: 'wrap' }}>
       <AppBar position="static" sx={{ backgroundColor: 'common.white' }}>
@@ -30,17 +37,17 @@ export default function HeaderLogin() {
           </Typography>
           <div>
             <IconButton
+              ref={anchorRef}
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleMenu}
+              onClick={handleToggle}
               color="inherit">
               <AccountCircle />
             </IconButton>
             <Menu
               id="menu-appbar"
-              anchorEl={anchorEl}
               anchorOrigin={{
                 vertical: 'top',
                 horizontal: 'right'
