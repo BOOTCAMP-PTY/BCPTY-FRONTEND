@@ -36,14 +36,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "check-types": "tsc --noemit",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
     "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "lint-staged": {
-    "**/*.{js,jsx}": [
-      "yarn run lint:fix",
-      "yarn run format"
+    "*.{js,jsx,ts,tsx,json}": [
+      "yarn lint:fix",
+      "yarn check-types",
+      "yarn format"
     ]
   },
   "eslintConfig": {
