@@ -42,7 +42,7 @@
     "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx,json}": [
+    "*.{js,ts,tsx}": [
       "yarn lint:fix",
       "yarn check-types",
       "yarn format"
