@@ -44,7 +44,6 @@
   "lint-staged": {
     "*.{js,ts,tsx}": [
       "yarn lint:fix",
-      "yarn check-types",
       "yarn format"
     ]
   },
