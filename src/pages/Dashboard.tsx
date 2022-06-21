@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from '@mui/material'
-import HeaderLogin from '../components/headers/HeaderLogin'
+import HeaderPage from '../components/headers/HeaderPage'
 
 export default function Log() {
   return (
@@ -11,7 +11,7 @@ export default function Log() {
         padding: '0 !important',
         backgroundColor: 'common.white',
       }}>
-      <HeaderLogin />
+      <HeaderPage />
     </Container>
   )
 }

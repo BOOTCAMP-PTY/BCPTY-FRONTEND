@@ -8,7 +8,7 @@ import { FaDiscord } from 'react-icons/fa'
 import CodeIcon from '@mui/icons-material/Code'
 import useMediaQuery from '../../hooks/useMediaQuery'
 
-export default function HeaderPage() {
+export default function HeaderHome() {
   const query = useMediaQuery(400)
   return (
     <Box sx={{ flexGrow: 1, width: 1, height: '10%', flexWrap: 'wrap' }}>

@@ -29,6 +29,7 @@
     "sweetalert2": "^11.4.17",
     "typescript": "^4.7.3",
     "web-vitals": "^2.1.0",
+    "yarn": "^1.22.19",
     "yup": "^0.32.11"
   },
   "scripts": {
@@ -39,8 +40,8 @@
     "prepare": "husky install",
     "check-types": "tsc --noemit",
     "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
-    "lint:fix": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'",
-    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
