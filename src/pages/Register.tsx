@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderPage from '../components/headers/HeaderPage'
+import HeaderPage from '../components/headers/HeaderPage/HeaderPage'
 import {
   TextField,
   Grid,

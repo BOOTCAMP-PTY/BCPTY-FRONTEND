@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import { FaDiscord } from 'react-icons/fa'
 import CodeIcon from '@mui/icons-material/Code'
-import useMediaQuery from '../../hooks/useMediaQuery'
+import useMediaQuery from '../../../hooks/useMediaQuery'
 
 export default function HeaderHome() {
   const query = useMediaQuery(400)

@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderPage from '../components/headers/HeaderPage'
+import HeaderPage from '../components/headers/HeaderPage/HeaderPage'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import {
   TextField,
