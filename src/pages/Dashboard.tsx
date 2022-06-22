@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, Grid } from '@mui/material'
-import AsideBar from '../components/drawers/Drawer'
-import HeaderPage from '../components/headers/HeaderPage/HeaderPage'
+import { Container } from '@mui/material'
+import AsideBar from '../components/drawers/AsideBar'
+import HomeCourse from '../components/HomeLogin/HomeCourse'
 export default function Log() {
   return (
     <Container
@@ -9,17 +9,11 @@ export default function Log() {
       sx={{
         height: '100vh',
         padding: '0 !important',
-        backgroundColor: 'common.white',
+        backgroundColor: 'green',
         display: 'flex',
       }}>
-      <Grid container>
-        <Grid item>
-          <AsideBar />
-        </Grid>
-        <Grid item sx={{ display: 'flex', flexGrow: 1 }}>
-          <HeaderPage />
-        </Grid>
-      </Grid>
+      <AsideBar />
+      <HomeCourse />
     </Container>
   )
 }
