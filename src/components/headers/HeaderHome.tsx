@@ -4,33 +4,30 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import { FaDiscord } from 'react-icons/fa'
-import CodeIcon from '@mui/icons-material/Code'
-import useMediaQuery from '../../../hooks/useMediaQuery'
+import useMediaQuery from '../../hooks/useMediaQuery'
+import { Discord, Logo } from '../../utils/const/icons'
 
-export default function HeaderHome() {
-  const query = useMediaQuery(400)
+type Props = {
+  query: number
+}
+export default function HeaderHome({ query }: Props) {
+  let res: boolean
+  query >= 400 ? (res = useMediaQuery(query)) : (res = !useMediaQuery(query))
   return (
-    <Box sx={{ flexGrow: 1, width: 1, height: '10%', flexWrap: 'wrap' }}>
+    <Box sx={{ flexGrow: 1, width: 1, flexWrap: 'wrap' }}>
       <AppBar position='static' sx={{ backgroundColor: 'common.white' }}>
         <Toolbar>
-          <CodeIcon sx={{ mr: 1 }} />
+          <Logo sx={{ mr: 1 }} />
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
             Logo and Brand
           </Typography>
-
-          {query && (
+          {res && (
             <>
-              <IconButton
-                size='large'
-                edge='start'
-                color='inherit'
-                aria-label='menu'
-                sx={{ mr: 2 }}>
+              <IconButton color='inherit' sx={{ mr: 2 }}>
                 <GitHubIcon />
               </IconButton>
-              <IconButton size='large' edge='start' color='inherit' aria-label='menu'>
-                <FaDiscord />
+              <IconButton color='inherit'>
+                <Discord />
               </IconButton>
             </>
           )}

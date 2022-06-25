@@ -10,15 +10,14 @@ import {
   Typography,
 } from '@mui/material'
 import React from 'react'
-import HeaderPage from '../headers/HeaderPage/HeaderPage'
 import SearchIcon from '@mui/icons-material/Search'
+import HeaderPage from '../headers/HeaderPage'
 
 export default function HomeCourse() {
   return (
     <Container
       maxWidth={false}
       sx={{
-        height: '100vh',
         padding: '0 !important',
         backgroundColor: 'common.white',
       }}>

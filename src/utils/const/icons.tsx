@@ -28,4 +28,9 @@ const Favorite = createSvgIcon(
   <path d='M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1zm13 2H6v15.432l6-3.761 6 3.761V4z' />,
   'Favorite',
 )
-export { HomeIcon, ArrowRight, ArrowLeft, Cursos, Discord, Roadmap, Favorite }
+
+const Logo = createSvgIcon(
+  <path d='M24 12l-5.657 5.657-1.414-1.414L21.172 12l-4.243-4.243 1.414-1.414L24 12zM2.828 12l4.243 4.243-1.414 1.414L0 12l5.657-5.657L7.07 7.757 2.828 12zm6.96 9H7.66l6.552-18h2.128L9.788 21z' />,
+  'Logo',
+)
+export { HomeIcon, ArrowRight, ArrowLeft, Cursos, Discord, Roadmap, Favorite, Logo }

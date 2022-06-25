@@ -16,15 +16,11 @@ import {
   Favorite,
   HomeIcon,
   Roadmap,
-} from '../../assets/images/svg/icons/icons'
+} from '../../utils/const/icons'
 
 export default function AsideBar() {
   const [open, setOpen] = useState(false)
   const icons = { color: '#F8F8F8', width: '43px', height: '43px' }
-  // Apuntes
-  // https://mui.com/material-ui/react-drawer/
-  // https://remixicon.com/
-  // https://www.youtube.com/watch?v=UWDcWApfmv4&ab_channel=FrontEndID
   return (
     <Box
       textAlign={'center'}

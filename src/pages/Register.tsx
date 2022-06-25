@@ -1,5 +1,3 @@
-import React from 'react'
-import HeaderPage from '../components/headers/HeaderPage/HeaderPage'
 import {
   TextField,
   Grid,
@@ -19,6 +17,7 @@ import HttpsIcon from '@mui/icons-material/Https'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
 import { IUserFormValues } from '../types/users'
+import HeaderHome from '../components/headers/HeaderHome'
 export default function Register() {
   const {
     register,
@@ -50,7 +49,7 @@ export default function Register() {
           padding: '0 !important',
           backgroundColor: 'common.white',
         }}>
-        <HeaderPage />
+        <HeaderHome query={1} />
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
             <Card

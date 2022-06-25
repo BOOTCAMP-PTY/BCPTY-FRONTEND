@@ -1,5 +1,3 @@
-import React from 'react'
-import HeaderPage from '../components/headers/HeaderPage/HeaderPage'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import {
   TextField,
@@ -18,6 +16,7 @@ import PersonIcon from '@mui/icons-material/Person'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import HttpsIcon from '@mui/icons-material/Https'
 import { IUserFormValues } from '../types/users'
+import HeaderHome from '../components/headers/HeaderHome'
 
 export default function Login() {
   const {
@@ -35,7 +34,7 @@ export default function Login() {
           padding: '0 !important',
           backgroundColor: 'common.white',
         }}>
-        <HeaderPage />
+        <HeaderHome query={1} />
         <form onSubmit={handleSubmit(onSubmit)}>
           <Grid container sx={{ display: 'flex', justifyContent: 'center' }}>
             <Card
