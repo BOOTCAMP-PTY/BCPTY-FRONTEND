@@ -15,8 +15,8 @@ export default function HeaderPage() {
     setAnchorEl(null)
   }
   return (
-    <Box sx={{ flexGrow: 1, width: 1, flexWrap: 'wrap' }}>
-      <AppBar position='static' sx={{ backgroundColor: 'common.white' }}>
+    <Box sx={{ flexGrow: 1, width: 1, flexWrap: 'wrap', position: 'fixed' }}>
+      <AppBar position='static' sx={{ background: 'none', boxShadow: 'none' }}>
         <Toolbar>
           <Logo sx={{ mr: 1 }} />
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>

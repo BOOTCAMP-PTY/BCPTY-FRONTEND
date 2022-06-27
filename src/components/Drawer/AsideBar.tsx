@@ -25,6 +25,8 @@ export default function AsideBar() {
     <Box
       textAlign={'center'}
       sx={{
+        zIndex: 1,
+        position: 'fixed',
         background: '#1A1C1E',
         height: '100%',
         width: open ? { xs: '427px' } : { xs: '128px' },
@@ -35,24 +37,25 @@ export default function AsideBar() {
           flexDirection: 'column',
         }}>
         <IconButton size='large' color='inherit' aria-label='logo' onClick={() => setOpen(!open)}>
-          {open ? <ArrowRight sx={icons} /> : <ArrowLeft sx={icons} />}
+          {open ? (
+            <ArrowRight sx={{ ...icons, mb: '87px' }} />
+          ) : (
+            <ArrowLeft sx={{ ...icons, mb: '87px' }} />
+          )}
         </IconButton>
         {['Dashboard', 'Cursos', 'Roadmaps', 'Favoritos'].map((text, index) => (
           <ListItem
             key={text}
             sx={{
-              marginBottom: '50px',
               display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
             }}>
             <ListItemButton
               sx={{
-                minHeight: 64,
                 borderRadius: '15px',
                 px: open ? 2.4 : 0,
                 display: 'flex',
                 justifyContent: open ? 'left' : 'center',
+                alignItems: 'center',
                 padding: 0,
               }}>
               <ListItemIcon
