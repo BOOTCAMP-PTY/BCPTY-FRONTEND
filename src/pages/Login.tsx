@@ -18,14 +18,25 @@ import PersonIcon from '@mui/icons-material/Person'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import HttpsIcon from '@mui/icons-material/Https'
 import { IUserFormValues } from '../types/users'
+import { useDispatch } from 'react-redux'
+import { changeStatus } from '../services/store/userSlice'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<IUserFormValues>()
-  const onSubmit: SubmitHandler<IUserFormValues> = (data) => console.log(data)
+
+  const onSubmit: SubmitHandler<IUserFormValues> = (data) => {
+    console.log(data)
+    dispatch(changeStatus())
+    navigate('/dashboard', { replace: true })
+  }
+
   return (
     <>
       <Container
