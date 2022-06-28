@@ -33,7 +33,7 @@ export default function Home() {
             variant='h1'
             color='initial'
             sx={{
-              marginBottom: { xs: '41', sm: '43px' },
+              marginBottom: { xs: '41px', sm: '43px' },
             }}
             align='left'>
             Aprende a Programar como un Pro
@@ -42,7 +42,7 @@ export default function Home() {
             variant='body1'
             color='initial'
             sx={{
-              marginBottom: { xs: '64', sm: '43px' },
+              marginBottom: { xs: '64px', sm: '43px' },
             }}
             align='justify'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore laborum impedit sequi
@@ -55,7 +55,7 @@ export default function Home() {
                 variant='contained'
                 component={Link}
                 sx={{
-                  width: '194px',
+                  width: { xs: 194, md: 160, lg: 194 },
                   height: '51px',
                 }}
                 to='/login'>
@@ -79,7 +79,7 @@ export default function Home() {
                 variant='contained'
                 component={Link}
                 sx={{
-                  width: '194px',
+                  width: { xs: 194, md: 160, lg: 194 },
                   height: '51px',
                 }}
                 to='/register'>
