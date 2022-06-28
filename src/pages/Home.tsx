@@ -13,7 +13,7 @@ export default function Home() {
         padding: '0 !important',
         backgroundColor: 'common.white',
       }}>
-      <HeaderHome query={400} />
+      <HeaderHome />
       <Grid
         container
         alignItems='center'

@@ -44,7 +44,7 @@ export default function Register() {
         padding: '0 !important',
         backgroundColor: 'common.white',
       }}>
-      <HeaderHome query={1} />
+      <HeaderHome />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container sx={{ display: 'flex', justifyContent: 'center', mt: '56px' }}>
           <Card

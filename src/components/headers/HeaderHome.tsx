@@ -6,13 +6,12 @@ import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import useMediaQuery from '../../hooks/useMediaQuery'
 import { Discord, Logo } from '../../utils/const/icons'
+import { useLocation } from 'react-router-dom'
 
-type Props = {
-  query: number
-}
-export default function HeaderHome({ query }: Props) {
-  let res: boolean
-  query >= 400 ? (res = useMediaQuery(query)) : (res = !useMediaQuery(query))
+export default function HeaderHome() {
+  const query = useMediaQuery(400)
+  console.log(query)
+  const location = useLocation()
   return (
     <Box sx={{ flexGrow: 1, width: 1, flexWrap: 'wrap' }}>
       <AppBar position='static' sx={{ background: 'none', boxShadow: 'none' }}>
@@ -21,16 +20,18 @@ export default function HeaderHome({ query }: Props) {
           <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
             Logo and Brand
           </Typography>
-          {res && (
-            <>
-              <IconButton color='inherit' sx={{ mr: 2 }}>
-                <GitHubIcon />
-              </IconButton>
-              <IconButton color='inherit'>
-                <Discord />
-              </IconButton>
-            </>
-          )}
+          {location.pathname !== '/login' && location.pathname !== '/register'
+            ? query && (
+                <>
+                  <IconButton color='inherit' sx={{ mr: 2 }}>
+                    <GitHubIcon />
+                  </IconButton>
+                  <IconButton color='inherit'>
+                    <Discord />
+                  </IconButton>
+                </>
+              )
+            : null}
         </Toolbar>
       </AppBar>
     </Box>

@@ -29,7 +29,7 @@ export default function Login() {
         padding: '0 !important',
         backgroundColor: 'common.white',
       }}>
-      <HeaderHome query={1} />
+      <HeaderHome />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container sx={{ display: 'flex', justifyContent: 'center', mt: '56px' }}>
           <Card sx={{ ...login.card, height: { lg: '797px', xs: '500px', sm: '697px' } }}>
