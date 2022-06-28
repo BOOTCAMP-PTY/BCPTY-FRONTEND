@@ -13,14 +13,25 @@ import {
 import { IUserFormValues } from '../types/users'
 import HeaderHome from '../components/headers/HeaderHome'
 import { GitHub, Google, login, Password, User } from '../utils/const/login'
+import { useDispatch } from 'react-redux'
+import { changeStatus } from '../services/store/userSlice'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<IUserFormValues>()
-  const onSubmit: SubmitHandler<IUserFormValues> = (data) => console.log(data)
+
+  const onSubmit: SubmitHandler<IUserFormValues> = (data) => {
+    console.log(data)
+    dispatch(changeStatus())
+    navigate('/dashboard', { replace: true })
+  }
+
   return (
     <Container
       maxWidth={false}
