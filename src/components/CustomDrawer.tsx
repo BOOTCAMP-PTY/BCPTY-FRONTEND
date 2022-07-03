@@ -16,52 +16,65 @@ import {
   Favorite,
   HomeIcon,
   Roadmap,
-} from '../../utils/const/icons'
+} from '../utils/const/icons'
 
-export default function AsideBar() {
+export default function CustomDrawer() {
   const [open, setOpen] = useState(false)
   const icons = { color: '#F8F8F8', width: '43px', height: '43px' }
   return (
     <Box
       textAlign={'center'}
       sx={{
-        zIndex: 1,
+        display: { xs: 'none', md: 'block' },
         position: 'fixed',
+        zIndex: 9999,
         background: '#1A1C1E',
+        borderRadius: '0 15px 15px 0',
         height: '100%',
-        width: open ? { xs: '427px' } : { xs: '128px' },
+        width: open ? { xs: '330px' } : { xs: '128px' },
+        transition: '0.5s',
+        overflow: 'hidden',
       }}>
       <List
         sx={{
           display: 'flex',
           flexDirection: 'column',
         }}>
-        <IconButton size='large' color='inherit' aria-label='logo' onClick={() => setOpen(!open)}>
-          {open ? (
-            <ArrowRight sx={{ ...icons, mb: '87px' }} />
-          ) : (
-            <ArrowLeft sx={{ ...icons, mb: '87px' }} />
-          )}
-        </IconButton>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            paddingLeft: 4,
+            mt: '12px',
+            mb: '50px',
+            justifyContent: 'flex-start',
+          }}>
+          <IconButton size='large' color='inherit' aria-label='logo' onClick={() => setOpen(!open)}>
+            {open ? <ArrowLeft sx={{ ...icons }} /> : <ArrowRight sx={{ ...icons }} />}
+          </IconButton>
+        </Box>
         {['Dashboard', 'Cursos', 'Roadmaps', 'Favoritos'].map((text, index) => (
           <ListItem
             key={text}
             sx={{
               display: 'flex',
+              height: 84,
             }}>
             <ListItemButton
               sx={{
                 borderRadius: '15px',
-                px: open ? 2.4 : 0,
                 display: 'flex',
-                justifyContent: open ? 'left' : 'center',
                 alignItems: 'center',
                 padding: 0,
+                '&:hover': {
+                  backgroundColor: '#313334',
+                  height: 68,
+                },
               }}>
               <ListItemIcon
                 sx={{
                   minWidth: 0,
-                  m: open ? '11px 26px 10px' : 0,
+                  m: '11px 26px 10px',
                   color: '#F8F8F8',
                 }}>
                 {index === 0 && <HomeIcon sx={icons} />}
@@ -69,7 +82,7 @@ export default function AsideBar() {
                 {index === 2 && <Roadmap sx={icons} />}
                 {index === 3 && <Favorite sx={icons} />}
               </ListItemIcon>
-              <Typography variant='h6' color='#F8F8F8' sx={{ display: open ? 'contents' : 'none' }}>
+              <Typography variant='h4' color='#F8F8F8' sx={{ px: '20px' }}>
                 {text}
               </Typography>
             </ListItemButton>
@@ -79,7 +92,7 @@ export default function AsideBar() {
       <Discord
         sx={{
           position: 'absolute',
-          bottom: '20px',
+          bottom: '28px',
           left: '40px',
           ...icons,
         }}
