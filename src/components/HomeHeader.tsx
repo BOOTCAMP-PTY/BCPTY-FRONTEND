@@ -4,11 +4,11 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import GitHubIcon from '@mui/icons-material/GitHub'
-import useMediaQuery from '../../hooks/useMediaQuery'
-import { Discord, Logo } from '../../utils/const/icons'
+import useMediaQuery from '../hooks/useMediaQuery'
+import { Discord, Logo } from '../utils/const/icons'
 import { useLocation } from 'react-router-dom'
 
-export default function HeaderHome() {
+export default function HomeHeader() {
   const query = useMediaQuery(400)
   console.log(query)
   const location = useLocation()
