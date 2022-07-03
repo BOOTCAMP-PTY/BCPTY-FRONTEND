@@ -1,8 +1,7 @@
-import React from 'react'
 import { Typography, Button, Grid, Container } from '@mui/material'
-import HeaderHome from '../components/headers/HeaderHome'
+import HomeHeader from '../components/HomeHeader'
 import Image from '../components/Image'
-import homeBanner from '../assets/images/svg/landing_banner.svg'
+import homeBanner from '../assets/images/landing_banner.svg'
 import { Link } from 'react-router-dom'
 
 export default function Home() {
@@ -14,7 +13,7 @@ export default function Home() {
         padding: '0 !important',
         backgroundColor: 'common.white',
       }}>
-      <HeaderHome />
+      <HomeHeader />
       <Grid
         container
         alignItems='center'

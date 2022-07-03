@@ -1,17 +1,10 @@
-import React from 'react'
-import { Container } from '@mui/material'
-import HeaderLogin from '../components/headers/HeaderLogin'
+import DashboardContent from '../components/DashboardContent'
+import { MainLayout } from '../layouts/MainLayout'
 
-export default function Log() {
+export default function DashBoard() {
   return (
-    <Container
-      maxWidth={false}
-      sx={{
-        height: '100vh',
-        padding: '0 !important',
-        backgroundColor: 'common.white',
-      }}>
-      <HeaderLogin />
-    </Container>
+    <MainLayout>
+      <DashboardContent />
+    </MainLayout>
   )
 }
