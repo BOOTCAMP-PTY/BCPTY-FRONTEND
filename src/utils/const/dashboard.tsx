@@ -22,9 +22,9 @@ const Search = () => {
     <SearchIcon
       sx={{
         color: '#636363',
-        width: '38px',
-        height: '38px',
-        marginRight: '35px',
+        width: '28px',
+        height: '28px',
+        marginRight: '11px',
       }}
     />
   )
