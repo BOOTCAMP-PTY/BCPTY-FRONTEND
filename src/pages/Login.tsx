@@ -11,7 +11,7 @@ import {
   Alert,
 } from '@mui/material'
 import { IUserFormValues } from '../types/users'
-import HeaderHome from '../components/headers/HeaderHome'
+import HomeHeader from '../components/HomeHeader'
 import { GitHub, Google, login, Password, User } from '../utils/const/login'
 import { useDispatch } from 'react-redux'
 import { changeStatus } from '../services/store/userSlice'
@@ -40,7 +40,7 @@ export default function Login() {
         padding: '0 !important',
         backgroundColor: 'common.white',
       }}>
-      <HeaderHome />
+      <HomeHeader />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container sx={{ display: 'flex', justifyContent: 'center', mt: '56px' }}>
           <Card sx={{ ...login.card, height: { lg: '797px', xs: '500px', sm: '697px' } }}>

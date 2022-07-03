@@ -12,7 +12,7 @@ import {
 import { SubmitHandler, useForm } from 'react-hook-form'
 import Swal from 'sweetalert2'
 import { IUserFormValues } from '../types/users'
-import HeaderHome from '../components/headers/HeaderHome'
+import HomeHeader from '../components/HomeHeader'
 import { User, Password, Google, GitHub, login } from '../utils/const/login'
 export default function Register() {
   const {
@@ -44,7 +44,7 @@ export default function Register() {
         padding: '0 !important',
         backgroundColor: 'common.white',
       }}>
-      <HeaderHome />
+      <HomeHeader />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Grid container sx={{ display: 'flex', justifyContent: 'center', mt: '56px' }}>
           <Card
