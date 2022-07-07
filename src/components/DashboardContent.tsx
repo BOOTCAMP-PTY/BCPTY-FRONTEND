@@ -1,16 +1,15 @@
-import { Button, Card, CardMedia, Grid, InputAdornment, TextField, Typography } from '@mui/material'
-import Carousel from 'react-multi-carousel'
-import 'react-multi-carousel/lib/styles.css'
+import { Button, Grid, InputAdornment, TextField, Typography } from '@mui/material'
 import { Search } from '../utils/const/dashboard'
+import Carrusel from './Carousel/Carrusel'
+import { LargeCard, MediumCard, SmallCard } from './Carousel/CarruselCards'
+import { continuarViendo, loMasVisto, nuevosCursos } from './Carousel/responsive'
 
 export default function DashboardContent() {
   return (
     <>
-      <Grid xs={12}>
-        <Typography variant='h3' color='common.black'>
-          Hola, Joe Doe
-        </Typography>
-      </Grid>
+      <Typography variant='h3' color='common.black'>
+        Hola, Joe Doe
+      </Typography>
 
       <Grid container alignItems={'flex-end'} xs={12} mt={'77px'}>
         <Grid item xs={12} sm={7} lg={9}>
@@ -59,118 +58,18 @@ export default function DashboardContent() {
         <Typography variant='h4' color='#3B3B3B'>
           Continuar Viendo
         </Typography>
-
         {/* Carosuel Component */}
         <Grid item xs={12} mt={4} sx={{ width: '100%', height: 'auto' }}>
-          <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlaySpeed={3000}
-            centerMode={false}
-            className=''
-            containerClass='container-with-dots'
-            dotListClass=''
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass=''
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1024,
-                },
-                items: 4,
-                partialVisibilityGutter: 40,
-              },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0,
-                },
-                items: 1,
-                partialVisibilityGutter: 30,
-              },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464,
-                },
-                items: 2,
-                partialVisibilityGutter: 30,
-              },
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=''
-            slidesToSlide={1}
-            swipeable>
-            <Card sx={{ width: '236px', height: '155px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
+          <Carrusel responsive={continuarViendo} clase={'clase1'}>
+            {[1, 2, 3, 4, 5, 6].map((index) => (
+              <SmallCard
+                key={index}
+                img={
+                  'https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/the-benefits-of-reactjs-main.jpg'
+                }
               />
-            </Card>
-            <Card sx={{ width: '236px', height: '155px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '236px', height: '155px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '236px', height: '155px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '236px', height: '155px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '236px', height: '155px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '236px', height: '155px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-          </Carousel>
+            ))}
+          </Carrusel>
         </Grid>
       </Grid>
 
@@ -182,99 +81,16 @@ export default function DashboardContent() {
 
         {/* Carosuel Component */}
         <Grid item xs={12} mt={4} sx={{ width: '100%', height: 'auto' }}>
-          <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlaySpeed={3000}
-            centerMode={false}
-            className=''
-            containerClass='container-with-dots'
-            dotListClass=''
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass=''
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1024,
-                },
-                items: 2,
-                partialVisibilityGutter: 40,
-              },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0,
-                },
-                items: 1,
-                partialVisibilityGutter: 30,
-              },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464,
-                },
-                items: 1,
-                partialVisibilityGutter: 30,
-              },
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=''
-            slidesToSlide={1}
-            swipeable>
-            <Card sx={{ width: '527px', height: '262px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
+          <Carrusel responsive={nuevosCursos} clase={'clase2'}>
+            {[1, 2, 3, 4, 5, 6].map((index) => (
+              <LargeCard
+                key={index}
+                img={
+                  'https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/the-benefits-of-reactjs-main.jpg'
+                }
               />
-            </Card>
-            <Card sx={{ width: '527px', height: '262px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '527px', height: '262px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '527px', height: '262px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '343px', height: '192px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-          </Carousel>
+            ))}
+          </Carrusel>
         </Grid>
       </Grid>
 
@@ -286,99 +102,16 @@ export default function DashboardContent() {
 
         {/* Carosuel Component */}
         <Grid item xs={12} mt={4} sx={{ width: '100%', height: 'auto' }}>
-          <Carousel
-            additionalTransfrom={0}
-            arrows
-            autoPlaySpeed={3000}
-            centerMode={false}
-            className=''
-            containerClass='container-with-dots'
-            dotListClass=''
-            draggable
-            focusOnSelect={false}
-            infinite
-            itemClass=''
-            keyBoardControl
-            minimumTouchDrag={80}
-            pauseOnHover
-            renderArrowsWhenDisabled={false}
-            renderButtonGroupOutside={false}
-            renderDotsOutside={false}
-            responsive={{
-              desktop: {
-                breakpoint: {
-                  max: 3000,
-                  min: 1024,
-                },
-                items: 3,
-                partialVisibilityGutter: 40,
-              },
-              mobile: {
-                breakpoint: {
-                  max: 464,
-                  min: 0,
-                },
-                items: 1,
-                partialVisibilityGutter: 30,
-              },
-              tablet: {
-                breakpoint: {
-                  max: 1024,
-                  min: 464,
-                },
-                items: 2,
-                partialVisibilityGutter: 30,
-              },
-            }}
-            rewind={false}
-            rewindWithAnimation={false}
-            rtl={false}
-            shouldResetAutoplay
-            showDots={false}
-            sliderClass=''
-            slidesToSlide={1}
-            swipeable>
-            <Card sx={{ width: '343px', height: '192px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
+          <Carrusel responsive={loMasVisto} clase={'clase3'}>
+            {[1, 2, 3, 4, 5, 6].map((index) => (
+              <MediumCard
+                key={index}
+                img={
+                  'https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/the-benefits-of-reactjs-main.jpg'
+                }
               />
-            </Card>
-            <Card sx={{ width: '343px', height: '192px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '343px', height: '192px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '343px', height: '192px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-            <Card sx={{ width: '343px', height: '192px' }}>
-              <CardMedia
-                component='img'
-                alt='Fixing CSS load order/style.chunk.css incorrect in Nextjs'
-                image='https://images.unsplash.com/photo-1549989476-69a92fa57c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60'
-                height='100%'
-              />
-            </Card>
-          </Carousel>
+            ))}
+          </Carrusel>
         </Grid>
       </Grid>
     </>
