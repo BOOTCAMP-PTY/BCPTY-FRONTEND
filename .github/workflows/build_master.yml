@@ -27,7 +27,12 @@ jobs:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
           scope: '@jmjhox'
+      - name: "Check package-lock.json existence"
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "package-lock.json"
       - name: removing npm.lock
+        if: steps.check_files.outputs.files_exists == 'true'
         run: rm package-lock.json
       - name: Install dependencies
         run: yarn install
