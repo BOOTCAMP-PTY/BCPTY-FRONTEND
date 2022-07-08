@@ -68,6 +68,14 @@ const SearchIcon = createSvgIcon(
   />,
   'Search',
 )
+const ToDoIcon = createSvgIcon(
+  <path d='M8 4h13v2H8V4zm-5-.5h3v3H3v-3zm0 7h3v3H3v-3zm0 7h3v3H3v-3zM8 11h13v2H8v-2zm0 7h13v2H8v-2z' />,
+  'To do',
+)
+const TimeIcon = createSvgIcon(
+  <path d='M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm1-8h4v2h-6V7h2v5z' />,
+  'Time',
+)
 
 export {
   HomeIcon,
@@ -83,4 +91,6 @@ export {
   GitHubIcon,
   GoogleIcon,
   SearchIcon,
+  ToDoIcon,
+  TimeIcon,
 }
