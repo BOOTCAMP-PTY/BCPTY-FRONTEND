@@ -1,14 +1,15 @@
-import { Button, Card, CardMedia, Grid, InputAdornment, TextField, Typography } from '@mui/material'
+import { Button, Grid, InputAdornment, TextField, Typography } from '@mui/material'
 import { Search } from '../utils/const/dashboard'
+import Carrusel from './Carousel/Carrusel'
+import { LargeCard, MediumCard, SmallCard } from './Carousel/CarruselCards'
+import { continuarViendo, loMasVisto, nuevosCursos } from './Carousel/responsive'
 
 export default function DashboardContent() {
   return (
     <>
-      <Grid xs={12}>
-        <Typography variant='h3' color='common.black'>
-          Hola, Joe Doe
-        </Typography>
-      </Grid>
+      <Typography variant='h3' color='common.black'>
+        Hola, Joe Doe
+      </Typography>
 
       <Grid container alignItems={'flex-end'} xs={12} mt={'77px'}>
         <Grid item xs={12} sm={7} lg={9}>
@@ -57,19 +58,18 @@ export default function DashboardContent() {
         <Typography variant='h4' color='#3B3B3B'>
           Continuar Viendo
         </Typography>
-
         {/* Carosuel Component */}
-        <Grid xs={12} mt={4} sx={{ display: 'flex' }}>
-          {[1, 2, 3, 4].map((value, index) => (
-            <Card key={index} sx={{ width: '236px', height: '155px', marginRight: '55px' }}>
-              <CardMedia
-                component='img'
-                height='140'
-                image='/static/images/cards/contemplative-reptile.jpg'
-                alt='green iguana'
+        <Grid item xs={12} mt={4} sx={{ width: '100%', height: 'auto' }}>
+          <Carrusel responsive={continuarViendo} clase={'clase1'}>
+            {[1, 2, 3, 4, 5, 6].map((index) => (
+              <SmallCard
+                key={index}
+                img={
+                  'https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/the-benefits-of-reactjs-main.jpg'
+                }
               />
-            </Card>
-          ))}
+            ))}
+          </Carrusel>
         </Grid>
       </Grid>
 
@@ -80,17 +80,17 @@ export default function DashboardContent() {
         </Typography>
 
         {/* Carosuel Component */}
-        <Grid item xs={12} mt={4} sx={{ display: 'flex' }}>
-          {[1, 2].map((value, index) => (
-            <Card key={index} sx={{ width: '527px', height: '262px', marginRight: '55px' }}>
-              <CardMedia
-                component='img'
-                height='140'
-                image='/static/images/cards/contemplative-reptile.jpg'
-                alt='green iguana'
+        <Grid item xs={12} mt={4} sx={{ width: '100%', height: 'auto' }}>
+          <Carrusel responsive={nuevosCursos} clase={'clase2'}>
+            {[1, 2, 3, 4, 5, 6].map((index) => (
+              <LargeCard
+                key={index}
+                img={
+                  'https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/the-benefits-of-reactjs-main.jpg'
+                }
               />
-            </Card>
-          ))}
+            ))}
+          </Carrusel>
         </Grid>
       </Grid>
 
@@ -101,17 +101,17 @@ export default function DashboardContent() {
         </Typography>
 
         {/* Carosuel Component */}
-        <Grid item xs={12} mt={4} sx={{ display: 'flex' }}>
-          {[1, 2, 3].map((value, index) => (
-            <Card key={index} sx={{ width: '342px', height: '192px', marginRight: '40px' }}>
-              <CardMedia
-                component='img'
-                height='140'
-                image='/static/images/cards/contemplative-reptile.jpg'
-                alt='green iguana'
+        <Grid item xs={12} mt={4} sx={{ width: '100%', height: 'auto' }}>
+          <Carrusel responsive={loMasVisto} clase={'clase3'}>
+            {[1, 2, 3, 4, 5, 6].map((index) => (
+              <MediumCard
+                key={index}
+                img={
+                  'https://peerbits-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/the-benefits-of-reactjs-main.jpg'
+                }
               />
-            </Card>
-          ))}
+            ))}
+          </Carrusel>
         </Grid>
       </Grid>
     </>
