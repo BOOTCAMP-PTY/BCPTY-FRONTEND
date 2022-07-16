@@ -1,4 +1,4 @@
-name: build and test:master
+name: build, test and publish:master
 
 
 on:
@@ -38,11 +38,11 @@ jobs:
         run: yarn install
       - name: Build
         run: yarn run build
-      - uses: akhileshns/heroku-deploy@v3.12.12 
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: ${{secrets.HEROKU_APP_FRONTEND}}
-          heroku_email: ${{secrets.HEROKU_API_EMAIL}}
+      - name: Publish
+        uses: netlify/actions/build@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID_FRONT }}
         
   security:
     runs-on: ubuntu-latest
