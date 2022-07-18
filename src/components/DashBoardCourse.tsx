@@ -6,60 +6,110 @@ import { TimeIcon, ToDoIcon } from '../utils/const/icons'
 export default function DashBoardCourse() {
   return (
     <>
-      <div>
-        <h1>Introduccion a Git</h1>
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Typography
+          variant='h1'
+          sx={{
+            width: '444px',
+            height: '61px',
+            fontWeight: '700',
+            fontSize: '52px',
+            lineHeight: '62px',
+            mr: '44px',
+          }}>
+          Introduccion a Git
+        </Typography>
         <Chip
           label='Principiante'
           sx={{
             background: '#7A72FA',
             color: 'white',
-            width: '105px',
-            height: '21px',
+            width: '148px',
+            height: '36px',
+            fontWeight: '600',
             fontSize: '18px',
+            lineHeight: '21px',
           }}
         />
-      </div>
-      <Box sx={{ backgroundImage: `url(${Curso})`, width: '1226px', height: '416px' }}>
-        <Button>
-          <Typography variant='button'>Empezar Curso</Typography>
+      </Box>
+      <Box
+        sx={{
+          background: `url(${Curso})`,
+          width: '100%',
+          height: '416px',
+          display: 'flex',
+          justifyContent: 'end',
+          alignItems: 'end',
+          m: '38px 41px 86px 0',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}>
+        <Button
+          variant='contained'
+          sx={{
+            width: '272px',
+            height: '57px',
+            m: '0 30px 29px 0',
+          }}>
+          <Typography
+            variant='button'
+            color='#242424'
+            sx={{
+              fontWeight: '600',
+              fontSize: '24px',
+              lineHeight: '28px',
+            }}>
+            Empezar Curso
+          </Typography>
         </Button>
       </Box>
-      <div>
-        <Box>
-          <Typography variant='h2'>Descripcion del curso</Typography>
-          <Typography variant='body1'>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sit necessitatibus sunt
-            veniam autem libero suscipit unde tenetur deleniti. Eius dolorem odit quod nostrum
-            cupiditate necessitatibus reprehenderit alias numquam nulla.
-          </Typography>
-        </Box>
+      <Box>
+        <Typography variant='h3'>Descripcion del curso</Typography>
         <Box sx={{ display: 'flex' }}>
-          <Typography
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: '#8C8C8C',
-            }}>
-            <TimeIcon sx={{ mr: '8px', width: '18px', height: '18px' }} />
-          </Typography>
-          <Typography variant='body2' color='#8C8C8C' sx={{ display: 'flex', mr: '14px' }}>
-            5 horas
-          </Typography>
-          <Typography
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              color: '#8C8C8C',
-            }}>
-            <ToDoIcon sx={{ mr: '8px', width: '18px', height: '18px' }} />
-          </Typography>
-          <Typography variant='body2' color='#8C8C8C'>
-            15 lecciones
-          </Typography>
+          <Box sx={{ mr: '131px', width: '553px', height: '132px' }}>
+            <Typography variant='body1' align='justify'>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero sit necessitatibus sunt
+              veniam autem libero suscipit unde tenetur deleniti. Eius dolorem odit quod nostrum
+              cupiditate necessitatibus reprehenderit alias numquam nulla.
+            </Typography>
+          </Box>
+          <Box>
+            <Box sx={{ display: 'flex' }}>
+              <Box
+                sx={{
+                  color: '#8C8C8C',
+                  width: '38px',
+                  height: '38px',
+                  mr: '25px',
+                }}>
+                <TimeIcon sx={{ width: '100%', height: '100%' }} />
+              </Box>
+              <Typography variant='h5' color='#8C8C8C'>
+                15 minutos
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyItems: 'center',
+                mt: '26px',
+              }}>
+              <Box
+                sx={{
+                  color: '#8C8C8C',
+                  width: '38px',
+                  height: '38px',
+                  mr: '25px',
+                }}>
+                <ToDoIcon sx={{ width: '100%', height: '100%' }} />
+              </Box>
+              <Typography variant='h5' color='#8C8C8C' sx={{ width: '155px', height: '33px' }}>
+                5 lecciones
+              </Typography>
+            </Box>
+          </Box>
         </Box>
-      </div>
+      </Box>
     </>
   )
 }

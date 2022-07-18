@@ -4,6 +4,7 @@ import Dashboard from '../pages/Dashboard'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import { PrivateRoute } from './PrivateRoute'
+import Course from '../pages/Course'
 
 export default function Router() {
   return (
@@ -15,6 +16,7 @@ export default function Router() {
         <Route path='/*' element={<PrivateRoute />}>
           <Route path='dashboard' element={<Dashboard />} />
         </Route>
+        <Route path='/curso' element={<Course />} />
       </Routes>
     </BrowserRouter>
   )
