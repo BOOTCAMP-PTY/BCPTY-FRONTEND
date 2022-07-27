@@ -60,7 +60,7 @@ export default function DashboardContent() {
         </Typography>
         {/* Carosuel Component */}
         <Grid item xs={12} mt={4} sx={{ width: '100%', height: 'auto' }}>
-          <Carrusel responsive={continuarViendo} clase={'clase1'}>
+          <Carrusel responsive={continuarViendo} clase={'continuar-viendo'}>
             {[1, 2, 3, 4, 5, 6].map((index) => (
               <SmallCard
                 key={index}
@@ -81,7 +81,7 @@ export default function DashboardContent() {
 
         {/* Carosuel Component */}
         <Grid item xs={12} mt={4} sx={{ width: '100%', height: 'auto' }}>
-          <Carrusel responsive={nuevosCursos} clase={'clase2'}>
+          <Carrusel responsive={nuevosCursos} clase={'nuevos-cursos'}>
             {[1, 2, 3, 4, 5, 6].map((index) => (
               <LargeCard
                 key={index}
@@ -102,7 +102,7 @@ export default function DashboardContent() {
 
         {/* Carosuel Component */}
         <Grid item xs={12} mt={4} sx={{ width: '100%', height: 'auto' }}>
-          <Carrusel responsive={loMasVisto} clase={'clase3'}>
+          <Carrusel responsive={loMasVisto} clase={'los-mas-vistos'}>
             {[1, 2, 3, 4, 5, 6].map((index) => (
               <MediumCard
                 key={index}

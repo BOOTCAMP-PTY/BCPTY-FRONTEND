@@ -1,12 +1,14 @@
 import { Box, Card, CardContent, CardMedia, Chip, Typography } from '@mui/material'
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { TimeIcon, ToDoIcon } from '../../utils/const/icons'
 interface Props {
   img: string
 }
 function SmallCard({ img }: Props) {
+  const navigate = useNavigate()
   return (
-    <Card sx={{ width: '236px', height: '155px' }}>
+    <Card sx={{ width: '236px', height: '155px' }} onClick={() => navigate('../course')}>
       <CardMedia component='img' alt='img' image={img} sx={{ width: '236px', height: '101px' }} />
       <CardContent sx={{ width: '236px', height: '54px', pt: '8px' }}>
         <Typography variant='subtitle1' color='#3B3B3B' sx={{ fontSize: '14px' }}>
@@ -32,8 +34,9 @@ function SmallCard({ img }: Props) {
 }
 
 function MediumCard({ img }: Props) {
+  const navigate = useNavigate()
   return (
-    <Card sx={{ width: '343px', height: '192px' }}>
+    <Card sx={{ width: '343px', height: '192px' }} onClick={() => navigate('../course')}>
       <CardContent
         sx={{
           backgroundImage: `url(${img})`,
@@ -89,8 +92,11 @@ function MediumCard({ img }: Props) {
 }
 
 function LargeCard({ img }: Props) {
+  const navigate = useNavigate()
   return (
-    <Card sx={{ width: '527px', height: '262px', display: 'flex' }}>
+    <Card
+      sx={{ width: '527px', height: '262px', display: 'flex' }}
+      onClick={() => navigate('../course')}>
       <CardMedia component='img' alt='img' image={img} sx={{ height: '262px', width: '248px' }} />
       <CardContent sx={{ width: '279px', height: '262px' }}>
         <Box sx={{ display: 'flex', justifyContent: 'right' }}>
