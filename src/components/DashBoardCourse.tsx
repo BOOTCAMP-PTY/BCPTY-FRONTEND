@@ -5,7 +5,7 @@ import { TimeIcon, ToDoIcon } from '../utils/const/icons'
 
 export default function DashBoardCourse() {
   return (
-    <>
+    <Box sx={{ height: '100vh' }}>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Typography
           variant='h1'
@@ -110,6 +110,6 @@ export default function DashBoardCourse() {
           </Box>
         </Box>
       </Box>
-    </>
+    </Box>
   )
 }

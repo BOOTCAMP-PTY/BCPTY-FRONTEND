@@ -15,8 +15,8 @@ export default function Router() {
         <Route path='/register' element={<Register />} />
         <Route path='/*' element={<PrivateRoute />}>
           <Route path='dashboard' element={<Dashboard />} />
+          <Route path='course' element={<Course />} />
         </Route>
-        <Route path='/curso' element={<Course />} />
       </Routes>
     </BrowserRouter>
   )
