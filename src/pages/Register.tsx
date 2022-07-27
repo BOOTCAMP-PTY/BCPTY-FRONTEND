@@ -14,6 +14,9 @@ import Swal from 'sweetalert2'
 import { IUserFormValues } from '../types/users'
 import HomeHeader from '../components/HomeHeader'
 import { User, Password, Google, GitHub, login } from '../utils/const/login'
+import { useMutation } from '@apollo/client'
+import { registerUser } from '../utils/const/queries'
+
 export default function Register() {
   const {
     register,
@@ -22,11 +25,23 @@ export default function Register() {
     formState: { errors },
   } = useForm<IUserFormValues>()
 
+  const [mutateFunction] = useMutation(registerUser)
   const onSubmit: SubmitHandler<IUserFormValues> = (data) => {
-    console.log(data)
     if (data.password == data.confirmPassword) {
-      Swal.fire('Good job!', 'Tus datos se han enviado!', 'success')
-      reset()
+      mutateFunction({
+        variables: { username: 'default', email: data.email, password: data.password },
+      })
+        .then(() => {
+          Swal.fire('Good job!', 'Tus datos se han enviado!', 'success')
+          reset()
+        })
+        .catch(() => {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Hubo algún error!',
+          })
+        })
     } else {
       Swal.fire({
         icon: 'error',

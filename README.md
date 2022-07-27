@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/73685a6c-051f-4f77-ad07-9003333250ea/deploy-status)](https://app.netlify.com/sites/deluxe-yeot-141dbb/deploys)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -73,15 +74,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-#Librerias
-
+## Dependencies to be installed
+```
 npm install react-router-dom@6
 npm install @reduxjs/toolkit
 npm install react-hook-form
 npm install @mui/material @emotion/react @emotion/styled
 npm install react-redux redux
 npm install react-icons
-
-#Apuntes de guia para los themes
+```
+## Theme Guide Notes
+```
 https://mui.com/material-ui/customization/breakpoints/#default-breakpoints
 https://mui.com/system/properties/
+```
