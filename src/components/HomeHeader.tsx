@@ -10,7 +10,6 @@ import { useLocation } from 'react-router-dom'
 
 export default function HomeHeader() {
   const query = useMediaQuery(400)
-  console.log(query)
   const location = useLocation()
   return (
     <Box sx={{ flexGrow: 1, width: 1, flexWrap: 'wrap' }}>

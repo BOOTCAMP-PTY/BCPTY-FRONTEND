@@ -16,6 +16,8 @@ import { GitHub, Google, login, Password, User } from '../utils/const/login'
 import { useDispatch } from 'react-redux'
 import { changeStatus } from '../services/store/userSlice'
 import { useNavigate } from 'react-router-dom'
+import { useMutation } from '@apollo/client'
+import { loginUser } from '../utils/const/queries'
 
 export default function Login() {
   const dispatch = useDispatch()
@@ -26,10 +28,15 @@ export default function Login() {
     formState: { errors },
   } = useForm<IUserFormValues>()
 
+  const [userLoginCall] = useMutation(loginUser)
+
   const onSubmit: SubmitHandler<IUserFormValues> = (data) => {
-    console.log(data)
-    dispatch(changeStatus())
-    navigate('/dashboard', { replace: true })
+    userLoginCall({
+      variables: { identifier: data.email, password: data.password },
+    }).then(() => {
+      dispatch(changeStatus())
+      navigate('/dashboard', { replace: true })
+    })
   }
 
   return (

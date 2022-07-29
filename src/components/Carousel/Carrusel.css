@@ -1,13 +1,15 @@
-
-.clase1{
+.continuar-viendo {
   width: 236px !important;
   margin: 0 20px;
+  height: 160px !important;
 }
-.clase2{
+.nuevos-cursos {
   width: 526px !important;
   margin: 0 20px;
+  height: 265px !important;
 }
-.clase3{
+.los-mas-vistos {
   width: 343px !important;
   margin: 0 20px;
+  height: 195px !important;
 }

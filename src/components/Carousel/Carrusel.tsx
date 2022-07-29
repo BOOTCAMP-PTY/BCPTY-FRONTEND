@@ -45,7 +45,7 @@ export default function Carrusel({ responsive, clase, children }: Props) {
       dotListClass=''
       draggable
       focusOnSelect={false}
-      infinite
+      infinite={false}
       itemClass={clase}
       keyBoardControl
       minimumTouchDrag={80}
