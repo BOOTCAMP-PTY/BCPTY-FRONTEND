@@ -25,11 +25,11 @@ export default function Register() {
     formState: { errors },
   } = useForm<IUserFormValues>()
 
-  const [mutateFunction] = useMutation(registerUser)
+  const [userRegisterCall] = useMutation(registerUser)
   const onSubmit: SubmitHandler<IUserFormValues> = (data) => {
     if (data.password == data.confirmPassword) {
-      mutateFunction({
-        variables: { username: 'default', email: data.email, password: data.password },
+      userRegisterCall({
+        variables: { email: data.email, password: data.password },
       })
         .then(() => {
           Swal.fire('Good job!', 'Tus datos se han enviado!', 'success')
