@@ -28,7 +28,7 @@ jobs:
       - name: install packages with yarn
         run: yarn install
       - name: Build
-        run: npm run build
+        run: yarn build
 
   security:
     runs-on: ubuntu-latest
