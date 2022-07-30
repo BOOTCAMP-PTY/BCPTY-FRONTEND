@@ -18,6 +18,7 @@ import { changeStatus } from '../services/store/userSlice'
 import { useNavigate } from 'react-router-dom'
 import { useMutation } from '@apollo/client'
 import { loginUser } from '../utils/const/queries'
+import Cookies from 'js-cookie'
 
 export default function Login() {
   const dispatch = useDispatch()
@@ -29,11 +30,11 @@ export default function Login() {
   } = useForm<IUserFormValues>()
 
   const [userLoginCall] = useMutation(loginUser)
-
   const onSubmit: SubmitHandler<IUserFormValues> = (data) => {
     userLoginCall({
       variables: { identifier: data.email, password: data.password },
-    }).then(() => {
+    }).then((response) => {
+      Cookies.set('accessToken', response.data.login.jwt, { expires: 1 })
       dispatch(changeStatus())
       navigate('/dashboard', { replace: true })
     })

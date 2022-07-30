@@ -15,7 +15,8 @@ import { IUserFormValues } from '../types/users'
 import HomeHeader from '../components/HomeHeader'
 import { User, Password, Google, GitHub, login } from '../utils/const/login'
 import { useMutation } from '@apollo/client'
-import { registerUser } from '../utils/const/queries'
+import { createProfile, registerUser } from '../utils/const/queries'
+import Cookies from 'js-cookie'
 
 export default function Register() {
   const {
@@ -24,17 +25,22 @@ export default function Register() {
     reset,
     formState: { errors },
   } = useForm<IUserFormValues>()
-
+  const [createProfileCall] = useMutation(createProfile)
   const [userRegisterCall] = useMutation(registerUser)
   const onSubmit: SubmitHandler<IUserFormValues> = (data) => {
     if (data.password == data.confirmPassword) {
       userRegisterCall({
         variables: { email: data.email, password: data.password },
       })
-        .then(() => {
+        .then((response) => {
+          Cookies.set('accessToken', response.data.register.jwt, { expires: 1 })
+          createProfileCall({
+            variables: { userId: response.data.register.user.id },
+          })
           Swal.fire('Good job!', 'Tus datos se han enviado!', 'success')
           reset()
         })
+
         .catch(() => {
           Swal.fire({
             icon: 'error',
