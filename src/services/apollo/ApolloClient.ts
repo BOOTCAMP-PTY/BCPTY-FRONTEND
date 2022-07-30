@@ -6,10 +6,11 @@ const httpLink = new HttpLink({
   uri: process.env.REACT_APP_API_URL,
 })
 
-const authLink = setContext(() => {
+const authLink = setContext((_, { headers }) => {
   const token = process.env.REACT_APP_TOKEN_AUTH
   return {
     headers: {
+      ...headers,
       authorization: `Bearer ${token}`,
     },
   }
